@@ -15,24 +15,27 @@ public class MySQL {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             try (Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/" + Init.APPLICATION_PROPERTIES.getProperty("db_name"),
+                    "jdbc:mysql://"
+                            + Init.APPLICATION_PROPERTIES.getProperty("db_host")+":"
+                            + Init.APPLICATION_PROPERTIES.getProperty("db_port")+"/" 
+                            + Init.APPLICATION_PROPERTIES.getProperty("db_name"),
                     Init.APPLICATION_PROPERTIES.getProperty("db_user"),
                     Init.APPLICATION_PROPERTIES.getProperty("db_user_password")
             )) {
                 Statement stmt = con.createStatement();
-                String query = "SELECT * FROM `employees`";
+                String query = "SELECT * FROM `books`";
                 System.out.println("Executing query: " + query);
                 ResultSet rs = stmt.executeQuery(query);
                 while (rs.next()) {
                     int id = rs.getInt("id");
-                    String name = rs.getString("name");
-                    int age = rs.getInt("age");
+                    String title = rs.getString("title");
+                    String author = rs.getString("author");
                     System.out.println(
                             "id: " + id
-                            + "\nname: " + name
-                            + "\nage: " + age
+                            + "\ntitle: " + title
+                            + "\nauthor: " + author
                     );
-                    System.out.println("---------------");
+                    System.out.println("------------------------------");
                 }
             }
         } catch (ClassNotFoundException | SQLException e) {

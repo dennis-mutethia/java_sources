@@ -1,3 +1,6 @@
-C:\tutorials\htdocs\java_sources\src\main\java\com\dennis\utils\Logging.java
-C:\tutorials\htdocs\java_sources\src\main\java\com\dennis\Init.java
-C:\tutorials\htdocs\java_sources\src\main\java\com\dennis\databases\MySQL.java
+C:\learning\java_sources\src\main\java\com\dennis\databases\SQLite.java
+C:\learning\java_sources\src\main\java\com\dennis\Init.java
+C:\learning\java_sources\src\main\java\com\dennis\databases\MySQL.java
+C:\learning\java_sources\src\main\java\com\dennis\threads\Master.java
+C:\learning\java_sources\src\main\java\com\dennis\utils\Logging.java
+C:\learning\java_sources\src\main\java\com\dennis\threads\Slave.java
